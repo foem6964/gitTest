@@ -2,7 +2,6 @@ const mysql_odbc = require('../db/db_conn')();
 const conn = mysql_odbc.init();
 
 const view = {
-
     list : (req,res) => {
         let page = req.params.page;
         let sql = "select *from board";
