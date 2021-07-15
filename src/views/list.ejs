@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+</head>
+<body>
+<h1><%= title %></h1>
+<a href="/write">글쓰기</a>
+<table border="1">
+    <tr>
+        <td>번호</td>
+        <td>작성자</td>
+        <td>제목</td>
+        <td>등록일</td>
+    </tr>
+    <%
+    for(var i=0; i < rows.length; i++)
+    {
+        var data = rows[i];
+    %>
+    <tr>
+        <td><%=data.idx%></td>
+        <td><%=data.name%></td>
+        <td><a href="/read/<%=data.idx%>"><%=data.title%></a></td>
+        <td><%=data.date%></td>
+    </tr>
+    <%}%>
+</table>
+</body>
+</html>
